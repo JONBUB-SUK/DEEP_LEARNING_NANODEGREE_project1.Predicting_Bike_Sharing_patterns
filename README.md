@@ -20,7 +20,20 @@ For feeding this data to Neuaral Net and tunning weights, we need to some data t
 
 ### 1. Introduction to Neural Net
 
+<img src="./images/study/Introduction_to_NeuralNet_1.jpg" width="400">
+<img src="./images/study/Introduction_to_NeuralNet_2.jpg" width="400">
 
+### 2. Gradient Descent
+
+<img src="./images/study/Gradient_descent_1.jpg" width="400">
+<img src="./images/study/Gradient_descent_2.jpg" width="400">
+
+### 3. Training Neural Network
+
+<img src="./images/study/Training_NeuralNet_1.jpg" width="400">
+<img src="./images/study/Training_NeuralNet_2.jpg" width="400">
+<img src="./images/study/Training_NeuralNet_3.jpg" width="400">
+<img src="./images/study/Training_NeuralNet_4.jpg" width="400">
 
 # Flow
 
