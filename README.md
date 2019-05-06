@@ -37,7 +37,7 @@ rides = pd.read_csv(data_path)
 rides.head()
 ```
 
-<img src="./images/input_data_1.png" width="400">
+<img src="./images/input_data_1.png" width="800">
 
 ### 2. Checking out the data
 
@@ -72,7 +72,7 @@ data = rides.drop(fields_to_drop, axis=1)
 data.head()
 ```
 
-<img src="./images/dummify_variables.png" width="400">
+<img src="./images/dummify_variables.png" width="800">
 
 ### 4. Scaling target variables
 
@@ -94,7 +94,7 @@ for each in quant_features:
     data.loc[:, each] = (data[each] - mean)/std
 ```
 
-<img src="./images/scaling_target_variables.png" width="400">
+<img src="./images/scaling_target_variables.png" width="800">
 
 ### 5. Splitting data into training, validation, testing sets
 
@@ -114,8 +114,8 @@ train_features, train_targets = features[:-60*24], targets[:-60*24]
 val_features, val_targets = features[-60*24:], targets[-60*24:]
 ```
 
-<img src="./images/test_features.png" width="400">
-<img src="./images/test_targets.png" width="400">
+<img src="./images/test_features.png" width="800">
+<img src="./images/test_targets.png" width="300">
 
 
 ## 2. Training , valiation, test
@@ -127,7 +127,7 @@ Below is flow of parameter tunnings
 ### 1. Learning Rate = 0.1, Hidden Nodes = 2, Iteration = 100 (orininal set)
 
 <img src="./images/loss/loss_train_val_1.png" width="400">
-<img src="./images/result/result_1_lr=0.1,hidden=2,iteration=100.png" width="400">
+<img src="./images/result/result_1_lr=0.1,hidden=2,iteration=100.png" width="600">
 
 We can see validation loss is down getting down at loss graph
 
