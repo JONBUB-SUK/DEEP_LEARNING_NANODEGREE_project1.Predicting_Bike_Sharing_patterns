@@ -115,7 +115,7 @@ val_features, val_targets = features[-60*24:], targets[-60*24:]
 ```
 
 <img src="./images/test_features.png" width="800">
-<img src="./images/test_targets.png" width="300">
+<img src="./images/test_targets.png" width="200">
 
 
 ## 2. Training , valiation, test
@@ -127,7 +127,7 @@ Below is flow of parameter tunnings
 ### 1. Learning Rate = 0.1, Hidden Nodes = 2, Iteration = 100 (orininal set)
 
 <img src="./images/loss/loss_train_val_1.png" width="400">
-<img src="./images/result/result_1_lr=0.1,hidden=2,iteration=100.png" width="600">
+<img src="./images/result/result_1_lr=0.1,hidden=2,iteration=100.png" width="800">
 
 We can see validation loss is down getting down at loss graph
 
