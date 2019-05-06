@@ -4,70 +4,21 @@
 
 ## 1. Purpose
 
+The purpose of this project is to predict number of bike rental for days, hours
 
 
+## 2. Input data
 
-## 2. Rubric points
-
-1. Car should perfectly drive at least 1 cycle
-
-
-## 3. Input data given by simulator / Output data for simulator
-
-1. Input
-
-For every "telemetry"
-- CTE
-- speed
-- steering angle
-
-2. Ouput
-
-For every "telemetry", I can send
-- steering angle
-- throttle
+Input data is csv file that includes number of bike sharing for days, hours, weekdays, weather etc
 
 
-
+For feeding this data to Neuaral Net and tunning weights, we need to some data tunnings
 
 
 # Background Learning
 
 
-### 1. PID control
-
-To control steering angle, we can calculate its angle by
-
-alpha = -Kp * CTE -Ki * delta(CTE) - Kd * sum(CTE)
-
-It is reason why being called PID control
-
-There are 3 coefficient Kp, Ki, Kd
-
-1) P means "Propotional"
-
-It affect to steering to turn as much as you are apart from target position
-
-2) I means "Integral"
-
-It is important when my car allignment is not good so it cannot go straight even though steering is straight
-
-3) D means "Differential"
-
-It can prevent oscillation of car
-
-When using only P term, the car will oscillate inevitably
-
-
-<img src="./images/pid_control.jpg" width="400">
-
-
-
-# Content Of This Repo
-- ```src``` a directory with the project code
-	- ```main.cpp``` : communicate with simulator, reads in data, calls a function in PID.h to drive
-	- ```PID.h``` : header file of PID
-	- ```PID.cpp``` : have functions have to be used in main.cpp
+### 1. Introduction to Neural Net
 
 
 
@@ -75,27 +26,236 @@ When using only P term, the car will oscillate inevitably
 
 ## 1. Preparing Data
 
-Before making code, I made flow chart to check total flow and check what function will be need
-
-<img src="./images/flow_chart_main.png" width="800">
+### 1. Loading and preparing data
 
 
 ```python
-#include "particle_filter.h"
+data_path = 'Bike-Sharing-Dataset/hour.csv'
 
-#include <math.h>
-#include <algorithm>
-#include <iostream>
-#include <iterator>
-#include <numeric>
-#include <random>
-#include <string>
+rides = pd.read_csv(data_path)
+
+rides.head()
 ```
+
+<img src="./images/input_data_1.png" width="400">
+
+### 2. Checking out the data
+
+I checked and plotted for 10 days data
+
+```python
+rides[:24*10].plot(x='dteday', y='cnt')
+```
+
+<img src="./images/input_data_2.png" width="400">
+
+### 3. Dummify variables
+
+For example, month has 12 values (1~12)
+
+But December doesn't mean that it has much valuable than January
+
+Because we put numbers to our Neural Net by x (input layer),
+we need to set all variables to equal value (0 or 1)
+
+And that variables are season, weather, month, hour, weekday
+
+```python
+dummy_fields = ['season', 'weathersit', 'mnth', 'hr', 'weekday']
+for each in dummy_fields:
+    dummies = pd.get_dummies(rides[each], prefix=each, drop_first=False)
+    rides = pd.concat([rides, dummies], axis=1)
+
+fields_to_drop = ['instant', 'dteday', 'season', 'weathersit', 
+                  'weekday', 'atemp', 'mnth', 'workingday', 'hr']
+data = rides.drop(fields_to_drop, axis=1)
+data.head()
+```
+
+<img src="./images/dummify_variables.png" width="400">
+
+### 4. Scaling target variables
+
+For example, number of rental for an hour can be 0 or even 10,000
+
+It can have too much difference and it can make distortion for Neuaral Net calculation
+
+So we have to scaling to equal range that have 0 mean and 1 standard deviation
+
+That variables are total rental number, registered number, casueal number, temperature, humidity, windspeed
+
+```python
+quant_features = ['casual', 'registered', 'cnt', 'temp', 'hum', 'windspeed']
+# Store scalings in a dictionary so we can convert back later
+scaled_features = {}
+for each in quant_features:
+    mean, std = data[each].mean(), data[each].std()
+    scaled_features[each] = [mean, std]
+    data.loc[:, each] = (data[each] - mean)/std
+```
+
+<img src="./images/scaling_target_variables.png" width="400">
+
+### 5. Splitting data into training, validation, testing sets
+
+```python
+test_data = data[-21*24:]
+
+data = data[:-21*24]
+
+target_fields = ['cnt', 'casual', 'registered']
+
+features, targets = data.drop(target_fields, axis=1), data[target_fields]
+
+test_features, test_targets = test_data.drop(target_fields, axis=1), test_data[target_fields]
+
+train_features, train_targets = features[:-60*24], targets[:-60*24]
+
+val_features, val_targets = features[-60*24:], targets[-60*24:]
+```
+
+<img src="./images/test_features.png" width="400">
+<img src="./images/test_targets.png" width="400">
+
+
+## 2. Training , valiation, test
+
+I did not included source code, please check .py files
+
+Below is flow of parameter tunnings
+
+### 1. Learning Rate = 0.1, Hidden Nodes = 2, Iteration = 100 (orininal set)
+
+<img src="./images/loss/loss_train_val_1.png" width="400">
+<img src="./images/result/result_1_lr=0.1,hidden=2,iteration=100.png" width="400">
+
+We can see validation loss is down getting down at loss graph
+
+That means it doesn't have correct architecture
+
+So I raised the hidden nodes
+
+### 2. Learning Rate = 0.1, Hidden Nodes = 100, Iteration = 100
+
+<img src="./images/loss/loss_train_val_2.png" width="400">
+<img src="./images/result/result_2_lr=0.1,hidden=100,iteration=100.png" width="400">
+
+This time but validation loss exploded
+
+So I lowered the hidden nodes
+
+### 3. Learning Rate = 0.1, Hidden Nodes = 50, Iteration = 100
+
+<img src="./images/loss/loss_train_val_3.png" width="400">
+<img src="./images/result/result_3_lr=0.1,hidden=50,iteration=100.png" width="400">
+
+This time, validation loss is not exploded but increased slowely
+
+So I lowered the hidden nodes more
+
+### 4. Learning Rate = 0.1, Hidden Nodes = 25, Iteration = 100
+
+<img src="./images/loss/loss_train_val_4.png" width="400">
+<img src="./images/result/result_4_lr=0.1,hidden=25,iteration=100.png" width="400">
+
+Thie time, validation loss is slowly getting down
+
+So I lowered the hidden nodes more
+
+### 5. Learning Rate = 0.1, Hidden Nodes = 13, Iteration = 100
+
+<img src="./images/loss/loss_train_val_5.png" width="400">
+<img src="./images/result/result_5_lr=0.1,hidden=13,iteration=100.png" width="400">
+
+This time, validation loss increased slowely
+
+So I raised the hidden nodes a little
+
+### 6. Learning Rate = 0.1, Hidden Nodes = 20, Iteration = 100
+
+<img src="./images/loss/loss_train_val_6.png" width="400">
+<img src="./images/result/result_6_lr=0.1,hidden=20,iteration=100.png" width="400">
+
+This time again, validation loss increased slowely
+
+So I raised the hidden nodes a little
+
+### 7. Learning Rate = 0.1, Hidden Nodes = 30, Iteration = 100
+
+<img src="./images/loss/loss_train_val_7.png" width="400">
+<img src="./images/result/result_7_lr=0.1,hidden=30,iteration=100.png" width="400">
+
+This time again, validation loss increased slowely
+
+So I concluded 25 is adaquate
+
+And next time, I raised learning rate to decrease error more fastly
+
+### 8. Learning Rate = 0.5, Hidden Nodes = 25, Iteration = 100
+
+<img src="./images/loss/loss_train_val_8.png" width="400">
+<img src="./images/result/result_8_lr=0.5,hidden=25,iteration=100.png" width="400">
+
+It was effective
+
+So I raised more
+
+### 9. Learning Rate = 1.0, Hidden Nodes = 25, Iteration = 100
+
+<img src="./images/loss/loss_train_val_9.png" width="400">
+<img src="./images/result/result_9_lr=1.0,hidden=25,iteration=100.png" width="400">
+
+It excluded
+
+So I concluded learning rate = 0.5 is adaquate
+
+Now its time to iteration
+
+I just put very high number to iteration
+
+### 10. Learning Rate = 0.5, Hidden Nodes = 25, Iteration = 7000
+
+<img src="./images/loss/loss_train_val_10.png" width="400">
+<img src="./images/result/result_10_lr=0.5,hidden=25,iteration=7000.png" width="400">
+
+Seeing loss graph, we can find val loss is inclined after 6500 iterations
+
+So I concluded iteration = 6500 is adaquate
+
+### 11. Learning Rate = 0.5, Hidden Nodes = 25, Iteration = 6500
+
+<img src="./images/loss/loss_train_val_11.png" width="400">
+<img src="./images/result/result_11_lr=0.5,hidden=25,iteration=6500.png" width="400">
+
 
 
 # Conclusion & Discussion
 
-### 1. About parameter tuning
+### 1. Meaning
+
+I already used Keras and TensorFlow library at Self Driving Car Nanodegree program
+
+Especially at Keras, it was possible to implement not only simple Neural Net but also complex and famous architectures
+
+even if I don't understand principle of Neural Net
+
+At that time, I thought I understood everything of Neural Net
+
+But this time was very good chance for me to studying Neural Net
+
+especially the mathmatical principle of Forward propagation, Backpropagation
+
+### 2. About architecture
+
+This project confined architectures to just 1 hidden layer Neural Net
+
+So there were only 3 variables I can adjust
+
+It was learning rate, number of hidden nodes, iterations
+
+Of course on the contrary, thanks to it, it was good time to feel the effects of that variables
+
+But if I can change architecture more complex, I will get better result
 
 
 
