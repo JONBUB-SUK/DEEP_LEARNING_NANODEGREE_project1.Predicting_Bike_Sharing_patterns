@@ -138,7 +138,7 @@ So I raised the hidden nodes
 ### 2. Learning Rate = 0.1, Hidden Nodes = 100, Iteration = 100
 
 <img src="./images/loss/loss_train_val_2.png" width="400">
-<img src="./images/result/result_2_lr=0.1,hidden=100,iteration=100.png" width="400">
+<img src="./images/result/result_2_lr=0.1,hidden=100,iteration=100.png" width="800">
 
 This time but validation loss exploded
 
@@ -147,7 +147,7 @@ So I lowered the hidden nodes
 ### 3. Learning Rate = 0.1, Hidden Nodes = 50, Iteration = 100
 
 <img src="./images/loss/loss_train_val_3.png" width="400">
-<img src="./images/result/result_3_lr=0.1,hidden=50,iteration=100.png" width="400">
+<img src="./images/result/result_3_lr=0.1,hidden=50,iteration=100.png" width="800">
 
 This time, validation loss is not exploded but increased slowely
 
@@ -156,7 +156,7 @@ So I lowered the hidden nodes more
 ### 4. Learning Rate = 0.1, Hidden Nodes = 25, Iteration = 100
 
 <img src="./images/loss/loss_train_val_4.png" width="400">
-<img src="./images/result/result_4_lr=0.1,hidden=25,iteration=100.png" width="400">
+<img src="./images/result/result_4_lr=0.1,hidden=25,iteration=100.png" width="800">
 
 Thie time, validation loss is slowly getting down
 
@@ -165,7 +165,7 @@ So I lowered the hidden nodes more
 ### 5. Learning Rate = 0.1, Hidden Nodes = 13, Iteration = 100
 
 <img src="./images/loss/loss_train_val_5.png" width="400">
-<img src="./images/result/result_5_lr=0.1,hidden=13,iteration=100.png" width="400">
+<img src="./images/result/result_5_lr=0.1,hidden=13,iteration=100.png" width="800">
 
 This time, validation loss increased slowely
 
@@ -174,7 +174,7 @@ So I raised the hidden nodes a little
 ### 6. Learning Rate = 0.1, Hidden Nodes = 20, Iteration = 100
 
 <img src="./images/loss/loss_train_val_6.png" width="400">
-<img src="./images/result/result_6_lr=0.1,hidden=20,iteration=100.png" width="400">
+<img src="./images/result/result_6_lr=0.1,hidden=20,iteration=100.png" width="800">
 
 This time again, validation loss increased slowely
 
@@ -183,7 +183,7 @@ So I raised the hidden nodes a little
 ### 7. Learning Rate = 0.1, Hidden Nodes = 30, Iteration = 100
 
 <img src="./images/loss/loss_train_val_7.png" width="400">
-<img src="./images/result/result_7_lr=0.1,hidden=30,iteration=100.png" width="400">
+<img src="./images/result/result_7_lr=0.1,hidden=30,iteration=100.png" width="800">
 
 This time again, validation loss increased slowely
 
@@ -194,7 +194,7 @@ And next time, I raised learning rate to decrease error more fastly
 ### 8. Learning Rate = 0.5, Hidden Nodes = 25, Iteration = 100
 
 <img src="./images/loss/loss_train_val_8.png" width="400">
-<img src="./images/result/result_8_lr=0.5,hidden=25,iteration=100.png" width="400">
+<img src="./images/result/result_8_lr=0.5,hidden=25,iteration=100.png" width="800">
 
 It was effective
 
@@ -203,7 +203,7 @@ So I raised more
 ### 9. Learning Rate = 1.0, Hidden Nodes = 25, Iteration = 100
 
 <img src="./images/loss/loss_train_val_9.png" width="400">
-<img src="./images/result/result_9_lr=1.0,hidden=25,iteration=100.png" width="400">
+<img src="./images/result/result_9_lr=1.0,hidden=25,iteration=100.png" width="800">
 
 It excluded
 
@@ -216,7 +216,7 @@ I just put very high number to iteration
 ### 10. Learning Rate = 0.5, Hidden Nodes = 25, Iteration = 7000
 
 <img src="./images/loss/loss_train_val_10.png" width="400">
-<img src="./images/result/result_10_lr=0.5,hidden=25,iteration=7000.png" width="400">
+<img src="./images/result/result_10_lr=0.5,hidden=25,iteration=7000.png" width="800">
 
 Seeing loss graph, we can find val loss is inclined after 6500 iterations
 
@@ -225,7 +225,7 @@ So I concluded iteration = 6500 is adaquate
 ### 11. Learning Rate = 0.5, Hidden Nodes = 25, Iteration = 6500
 
 <img src="./images/loss/loss_train_val_11.png" width="400">
-<img src="./images/result/result_11_lr=0.5,hidden=25,iteration=6500.png" width="400">
+<img src="./images/result/result_11_lr=0.5,hidden=25,iteration=6500.png" width="800">
 
 
 
