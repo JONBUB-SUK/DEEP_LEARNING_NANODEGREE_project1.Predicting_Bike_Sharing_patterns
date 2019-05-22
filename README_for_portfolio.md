@@ -1,4 +1,4 @@
-# UDACITY_DEEP_LEARNING_NANODEGREE_project1.Predicting_Bike_Sharing_patterns
+# DEEP LEARNING NANODEGREE project1.Predicting_Bike_Sharing_patterns
 
 # 1. Abstract
 
