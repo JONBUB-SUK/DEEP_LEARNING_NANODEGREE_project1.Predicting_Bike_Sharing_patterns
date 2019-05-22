@@ -267,6 +267,19 @@ class NeuralNetwork(object):
 
 <여기부터는 전체 과정은 표로 정리하고 최종 결과만 스크린샷 첨부>
 
+
+
+*Test One*
+
+| Trial |   Learning Rate   |   Hidden Nodes   |   Iteration   |              Explanation                  |
+| ----- | -------           | -------          |  -------      |                 ------                    |
+|  1    |        0.1        |        2         |       100     | Loss gets down, it means bad architecture |
+|  2    | 0.2811 |
+|  3    | 0.4542 |
+|  4    | 0.7827 |
+
+
+
 ### 1. Learning Rate = 0.1, Hidden Nodes = 2, Iteration = 100 (orininal set)
 
 <img src="./images/loss/loss_train_val_1.png" width="400">
