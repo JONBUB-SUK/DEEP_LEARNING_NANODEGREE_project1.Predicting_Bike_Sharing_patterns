@@ -2,12 +2,12 @@
 
 # 1. Abstract
 
-### 1. Purpose
+##### 1. Purpose
 
 The purpose of this project is to predict number of bike rental for days, hours
 
 
-### 2. Input data
+##### 2. Input data
 
 Input data is csv file that includes number of bike sharing for days, hours, weekdays, weather etc
 
@@ -18,13 +18,13 @@ For feeding this data to Neuaral Net and tunning weights, we need to some data t
 # 2. Background Learning
 
 
-### 1. Introduction to Neural Net
+##### 1. Introduction to Neural Net
 
 
-### 2. Gradient Descent
+##### 2. Gradient Descent
 
 
-### 3. Training Neural Network
+##### 3. Training Neural Network
 
 
 # 3. Code Flow
@@ -44,7 +44,7 @@ I had to spend much time to tuning hyperparameters like learning rate, number of
 
 ### 1. Preparing Data
 
-###### 1. Loading and preparing data
+##### 1. Loading and preparing data
 
 ```python
 data_path = 'Bike-Sharing-Dataset/hour.csv'
@@ -56,7 +56,7 @@ rides.head()
 
 <img src="./images/input_data_1.png" width="800">
 
-###### 2. Checking out the data
+##### 2. Checking out the data
 
 I checked and plotted for 10 days data
 
@@ -66,7 +66,7 @@ rides[:24*10].plot(x='dteday', y='cnt')
 
 <img src="./images/input_data_2.png" width="400">
 
-###### 3. Dummify variables
+##### 3. Dummify variables
 
 For example, month has 12 values (1~12)
 
@@ -91,7 +91,7 @@ data.head()
 
 <img src="./images/dummify_variables.png" width="800">
 
-###### 4. Scaling target variables
+##### 4. Scaling target variables
 
 For example, number of rental for an hour can be 0 or even 10,000
 
@@ -113,7 +113,7 @@ for each in quant_features:
 
 <img src="./images/scaling_target_variables.png" width="800">
 
-###### 5. Splitting data into training, validation, testing sets
+##### 5. Splitting data into training, validation, testing sets
 
 ```python
 test_data = data[-21*24:]
@@ -142,7 +142,7 @@ I did not included source code, please check .py files
 Below is flow of parameter tunnings
 
 
-###### 1. Training data
+##### 1. Training data
 
 ```python
 
@@ -177,7 +177,7 @@ for ii in range(iterations):
     
 ```
 
-###### 2. Explanation for NeuralNetwork initiation
+##### 2. Explanation for NeuralNetwork initiation
 
 ```python
 
@@ -201,7 +201,7 @@ class NeuralNetwork(object):
         
 ```
 
-###### 3. Explanation for NeuralNetwork.train method
+##### 3. Explanation for NeuralNetwork.train method
 
 ```python
 
@@ -260,16 +260,7 @@ class NeuralNetwork(object):
         return delta_weights_i_h, delta_weights_h_o
 ```
 
-
-
-
-
-
-<여기부터는 전체 과정은 표로 정리하고 최종 결과만 스크린샷 첨부>
-
-
-
-*Test One*
+# 4. Result
 
 | Trial |   Learning Rate   |   Hidden Nodes   |   Iteration   |              Explanation                  |
 | ----- | -------           | -------          |  -------      |                 ------                    |
@@ -285,116 +276,16 @@ class NeuralNetwork(object):
 |  10   |        0.5        |        25        |       7000    | Seeing loss graph, val loss is inclined after 6500 iterations|
 |  11   |        0.5        |        25        |       6500    | This is optimum hyperparameter I tuned |
 
-
-
-### 1. Learning Rate = 0.1, Hidden Nodes = 2, Iteration = 100 (orininal set)
-
-<img src="./images/loss/loss_train_val_1.png" width="400">
-<img src="./images/result/result_1_lr=0.1,hidden=2,iteration=100.png" width="800">
-
-We can see validation loss is down getting down at loss graph
-
-That means it doesn't have correct architecture
-
-So I raised the hidden nodes
-
-### 2. Learning Rate = 0.1, Hidden Nodes = 100, Iteration = 100
-
-<img src="./images/loss/loss_train_val_2.png" width="400">
-<img src="./images/result/result_2_lr=0.1,hidden=100,iteration=100.png" width="800">
-
-This time but validation loss exploded
-
-So I lowered the hidden nodes
-
-### 3. Learning Rate = 0.1, Hidden Nodes = 50, Iteration = 100
-
-<img src="./images/loss/loss_train_val_3.png" width="400">
-<img src="./images/result/result_3_lr=0.1,hidden=50,iteration=100.png" width="800">
-
-This time, validation loss is not exploded but increased slowely
-
-So I lowered the hidden nodes more
-
-### 4. Learning Rate = 0.1, Hidden Nodes = 25, Iteration = 100
-
-<img src="./images/loss/loss_train_val_4.png" width="400">
-<img src="./images/result/result_4_lr=0.1,hidden=25,iteration=100.png" width="800">
-
-Thie time, validation loss is slowly getting down
-
-So I lowered the hidden nodes more
-
-### 5. Learning Rate = 0.1, Hidden Nodes = 13, Iteration = 100
-
-<img src="./images/loss/loss_train_val_5.png" width="400">
-<img src="./images/result/result_5_lr=0.1,hidden=13,iteration=100.png" width="800">
-
-This time, validation loss increased slowely
-
-So I raised the hidden nodes a little
-
-### 6. Learning Rate = 0.1, Hidden Nodes = 20, Iteration = 100
-
-<img src="./images/loss/loss_train_val_6.png" width="400">
-<img src="./images/result/result_6_lr=0.1,hidden=20,iteration=100.png" width="800">
-
-This time again, validation loss increased slowely
-
-So I raised the hidden nodes a little
-
-### 7. Learning Rate = 0.1, Hidden Nodes = 30, Iteration = 100
-
-<img src="./images/loss/loss_train_val_7.png" width="400">
-<img src="./images/result/result_7_lr=0.1,hidden=30,iteration=100.png" width="800">
-
-This time again, validation loss increased slowely
-
-So I concluded 25 is adaquate
-
-And next time, I raised learning rate to decrease error more fastly
-
-### 8. Learning Rate = 0.5, Hidden Nodes = 25, Iteration = 100
-
-<img src="./images/loss/loss_train_val_8.png" width="400">
-<img src="./images/result/result_8_lr=0.5,hidden=25,iteration=100.png" width="800">
-
-It was effective
-
-So I raised more
-
-### 9. Learning Rate = 1.0, Hidden Nodes = 25, Iteration = 100
-
-<img src="./images/loss/loss_train_val_9.png" width="400">
-<img src="./images/result/result_9_lr=1.0,hidden=25,iteration=100.png" width="800">
-
-It excluded
-
-So I concluded learning rate = 0.5 is adaquate
-
-Now its time to iteration
-
-I just put very high number to iteration
-
-### 10. Learning Rate = 0.5, Hidden Nodes = 25, Iteration = 7000
-
-<img src="./images/loss/loss_train_val_10.png" width="400">
-<img src="./images/result/result_10_lr=0.5,hidden=25,iteration=7000.png" width="800">
-
-Seeing loss graph, we can find val loss is inclined after 6500 iterations
-
-So I concluded iteration = 6500 is adaquate
-
-### 11. Learning Rate = 0.5, Hidden Nodes = 25, Iteration = 6500
+*Graph*
 
 <img src="./images/loss/loss_train_val_11.png" width="400">
 <img src="./images/result/result_11_lr=0.5,hidden=25,iteration=6500.png" width="800">
 
 
 
-# Conclusion & Discussion
+# 5. Conclusion & Discussion
 
-### 1. Meaning
+##### 1. Meaning
 
 I already used Keras and TensorFlow library at Self Driving Car Nanodegree program
 
@@ -408,7 +299,7 @@ But this time was very good chance for me to studying Neural Net
 
 especially the mathmatical principle of Forward propagation, Backpropagation
 
-### 2. About architecture
+##### 2. About architecture
 
 This project confined architectures to just 1 hidden layer Neural Net
 
