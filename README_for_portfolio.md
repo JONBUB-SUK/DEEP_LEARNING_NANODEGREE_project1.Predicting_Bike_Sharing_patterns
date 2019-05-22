@@ -274,9 +274,16 @@ class NeuralNetwork(object):
 | Trial |   Learning Rate   |   Hidden Nodes   |   Iteration   |              Explanation                  |
 | ----- | -------           | -------          |  -------      |                 ------                    |
 |  1    |        0.1        |        2         |       100     | Loss gets down, it means bad architecture |
-|  2    | 0.2811 |
-|  3    | 0.4542 |
-|  4    | 0.7827 |
+|  2    |        0.1        |        100       |       100     | Validation loss exploded, need lower hidden nodes |
+|  3    |        0.1        |        50        |       100     | Validation loss increased slowly, need lower hidden nodes |
+|  4    |        0.1        |        25        |       100     | Validation loss decreased slowly, need lower hidden nodes |
+|  5    |        0.1        |        13        |       100     | Validation loss increased slowly, need higher hidden nodes |
+|  6    |        0.1        |        20        |       100     | Validation loss increased slowly, need higher hidden nodes |
+|  7    |        0.1        |        30        |       100     | Validation loss increased slowly, Hidden nodes should be 25 |
+|  8    |        0.5        |        25        |       100     | Increased learning rate was effective, need to be higher one |
+|  9    |        1.0        |        25        |       100     | Loss exploded, learning rate should be 0.5 |
+|  10   |        0.5        |        25        |       7000    | Seeing loss graph, val loss is inclined after 6500 iterations|
+|  11   |        0.5        |        25        |       6500    | This is optimum hyperparameter I tuned |
 
 
 
