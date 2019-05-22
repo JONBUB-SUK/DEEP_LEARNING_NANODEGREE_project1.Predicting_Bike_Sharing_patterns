@@ -1,13 +1,13 @@
 # UDACITY_DEEP_LEARNING_NANODEGREE_project1.Predicting_Bike_Sharing_patterns
 
-# Introduction
+# 1. Abstract
 
-## 1. Purpose
+### 1. Purpose
 
 The purpose of this project is to predict number of bike rental for days, hours
 
 
-## 2. Input data
+### 2. Input data
 
 Input data is csv file that includes number of bike sharing for days, hours, weekdays, weather etc
 
@@ -15,31 +15,36 @@ Input data is csv file that includes number of bike sharing for days, hours, wee
 For feeding this data to Neuaral Net and tunning weights, we need to some data tunnings
 
 
-# Background Learning
+# 2. Background Learning
 
 
 ### 1. Introduction to Neural Net
 
-<img src="./images/study/Introduction_to_NeuralNet_1.jpg" width="400">
-<img src="./images/study/Introduction_to_NeuralNet_2.jpg" width="400">
 
 ### 2. Gradient Descent
 
-<img src="./images/study/Gradient_descent_1.jpg" width="400">
-<img src="./images/study/Gradient_descent_2.jpg" width="400">
 
 ### 3. Training Neural Network
 
-<img src="./images/study/Training_NeuralNet_1.jpg" width="400">
-<img src="./images/study/Training_NeuralNet_2.jpg" width="400">
-<img src="./images/study/Training_NeuralNet_3.jpg" width="400">
-<img src="./images/study/Training_NeuralNet_4.jpg" width="400">
 
-# Flow
+# 3. Code Flow
 
-## 1. Preparing Data
+Firstly, we need to preprocess data
 
-### 1. Loading and preparing data
+We don't have to use all of data we have
+
+So we have to check what important variables is, and devide into three parts (train, validation, test)
+
+Secondly, we will use preprocessed data to predict result
+
+We have to decide the architecture of NeuralNet, size, loss function, ...
+
+I had to spend much time to tuning hyperparameters like learning rate, number of epochs, size of hidden nodes
+
+
+### 1. Preparing Data
+
+- 1. Loading and preparing data
 
 
 ```python
@@ -52,7 +57,7 @@ rides.head()
 
 <img src="./images/input_data_1.png" width="800">
 
-### 2. Checking out the data
+- 2. Checking out the data
 
 I checked and plotted for 10 days data
 
