@@ -4,12 +4,12 @@
 
 - Purpose
 
-The purpose of this project is to predict number of bike rental for days, hours
+  The purpose of this project is to predict number of bike rental for days, hours
 
 
 - Input data
 
-Input data is csv file that includes number of bike sharing for days, hours, weekdays, weather etc
+  Input data is csv file that includes number of bike sharing for days, hours, weekdays, weather etc
 
 
 For feeding this data to Neuaral Net and tunning weights, we need to some data tunnings
