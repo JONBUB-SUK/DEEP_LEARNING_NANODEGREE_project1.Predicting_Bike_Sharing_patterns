@@ -52,9 +52,9 @@ We have to decide the architecture of NeuralNet, size, loss function, ...
 I had to spend much time to tuning hyperparameters like learning rate, number of epochs, size of hidden nodes
 
 
-###### ① Preparing Data
+- Preparing Data
 
-- Loading and preparing data
+  ① Loading and preparing data
 
 ```python
 data_path = 'Bike-Sharing-Dataset/hour.csv'
@@ -66,7 +66,7 @@ rides.head()
 
 <img src="./images/input_data_1.png" width="800">
 
-- Checking out the data
+  ② Checking out the data
 
 I checked and plotted for 10 days data
 
