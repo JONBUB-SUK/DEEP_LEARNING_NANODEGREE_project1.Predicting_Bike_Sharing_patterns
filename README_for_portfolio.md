@@ -12,13 +12,13 @@
   Input data is csv file that includes number of bike sharing for days, hours, weekdays, weather etc
 
 
-For feeding this data to Neuaral Net and tunning weights, we need to some data tunnings
+  For feeding this data to Neuaral Net and tunning weights, we need to some data tunnings
 
 
 # 2. Background Learning
 
 
-##### 1. Introduction to Neural Net
+##### ① Introduction to Neural Net
 
 
 ##### 2. Gradient Descent
