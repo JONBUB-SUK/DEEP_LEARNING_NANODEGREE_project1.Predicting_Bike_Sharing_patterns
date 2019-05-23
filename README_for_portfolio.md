@@ -54,7 +54,7 @@ I had to spend much time to tuning hyperparameters like learning rate, number of
 
 - Preparing Data
 
-  ① Loading and preparing data
+① Loading and preparing data
 
 ```python
 data_path = 'Bike-Sharing-Dataset/hour.csv'
@@ -66,7 +66,7 @@ rides.head()
 
 <img src="./images/input_data_1.png" width="800">
 
-  ② Checking out the data
+② Checking out the data
 
 I checked and plotted for 10 days data
 
@@ -76,7 +76,7 @@ rides[:24*10].plot(x='dteday', y='cnt')
 
 <img src="./images/input_data_2.png" width="400">
 
-- Dummify variables
+③ Dummify variables
 
 For example, month has 12 values (1~12)
 
@@ -101,7 +101,7 @@ data.head()
 
 <img src="./images/dummify_variables.png" width="800">
 
-- Scaling target variables
+④ Scaling target variables
 
 For example, number of rental for an hour can be 0 or even 10,000
 
@@ -123,7 +123,7 @@ for each in quant_features:
 
 <img src="./images/scaling_target_variables.png" width="800">
 
-- Splitting data into training, validation, testing sets
+⑤ Splitting data into training, validation, testing sets
 
 ```python
 test_data = data[-21*24:]
@@ -145,14 +145,14 @@ val_features, val_targets = features[-60*24:], targets[-60*24:]
 <img src="./images/test_targets.png" width="200">
 
 
-### 2. Training , valiation, test
+- Training , valiation, test
 
 I did not included source code, please check .py files
 
 Below is flow of parameter tunnings
 
 
-##### 1. Training data
+① Training data
 
 ```python
 
@@ -187,7 +187,7 @@ for ii in range(iterations):
     
 ```
 
-##### 2. Explanation for NeuralNetwork initiation
+② Explanation for NeuralNetwork initiation
 
 ```python
 
@@ -211,7 +211,7 @@ class NeuralNetwork(object):
         
 ```
 
-##### 3. Explanation for NeuralNetwork.train method
+③ Explanation for NeuralNetwork.train method
 
 ```python
 
@@ -295,7 +295,7 @@ class NeuralNetwork(object):
 
 # 5. Conclusion & Discussion
 
-##### 1. Meaning
+① Meaning
 
 I already used Keras and TensorFlow library at Self Driving Car Nanodegree program
 
@@ -309,7 +309,7 @@ But this time was very good chance for me to studying Neural Net
 
 especially the mathmatical principle of Forward propagation, Backpropagation
 
-##### 2. About architecture
+② About architecture
 
 This project confined architectures to just 1 hidden layer Neural Net
 
