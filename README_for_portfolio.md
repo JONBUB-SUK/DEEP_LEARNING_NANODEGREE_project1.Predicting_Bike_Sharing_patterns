@@ -2,12 +2,12 @@
 
 # 1. Abstract
 
-##### 1. Purpose
+- Purpose
 
 The purpose of this project is to predict number of bike rental for days, hours
 
 
-##### 2. Input data
+- Input data
 
 Input data is csv file that includes number of bike sharing for days, hours, weekdays, weather etc
 
