@@ -239,8 +239,8 @@ class NeuralNetwork(object):
             # Implement the forward pass
             final_outputs, hidden_outputs = self.forward_pass_train(X)  
             # Implement the backproagation
-            delta_weights_i_h, delta_weights_h_o = self.backpropagation(final_outputs, hidden_outputs, X, y, 
-                                                                        delta_weights_i_h, delta_weights_h_o)
+            delta_weights_i_h, delta_weights_h_o = self.backpropagation
+            (final_outputs, hidden_outputs, X, y, delta_weights_i_h, delta_weights_h_o)
             
         self.update_weights(delta_weights_i_h, delta_weights_h_o, n_records)
 ```
@@ -249,11 +249,14 @@ class NeuralNetwork(object):
     def forward_pass_train(self, X):
 
         # signals into hidden layer
-        hidden_inputs = np.dot(X, self.weights_input_to_hidden) 
+        hidden_inputs = np.dot(X, self.weights_input_to_hidden)
+        
         # signals from hidden layer
         hidden_outputs = self.activation_function(hidden_inputs) 
-
-        final_inputs = np.dot(hidden_outputs, self.weights_hidden_to_output) # signals into final output layer
+        
+        # signals into final output layer
+        final_inputs = np.dot(hidden_outputs, self.weights_hidden_to_output) 
+        
         # Project guide required final activation f(x) = x
         # signals from final output layer
         final_outputs = final_inputs 
@@ -261,7 +264,8 @@ class NeuralNetwork(object):
         return final_outputs, hidden_outputs
 ```
 ```python
-    def backpropagation(self, final_outputs, hidden_outputs, X, y, delta_weights_i_h, delta_weights_h_o):
+    def backpropagation(self, final_outputs, hidden_outputs, 
+                        X, y, delta_weights_i_h, delta_weights_h_o):
 
         # Output layer error is the difference between desired target and actual output.
         error = y- final_outputs       
