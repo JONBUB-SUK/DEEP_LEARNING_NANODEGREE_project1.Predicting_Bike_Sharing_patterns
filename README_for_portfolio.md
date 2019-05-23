@@ -19,7 +19,9 @@ To make NeuralNet without Machine Learning framework, I need to study the princi
 I had to code feed forward, back propagation process on my own, basic principle but quite a confusing process
 
 
+
 ## 2. Related Study
+
 
 #### 1) Introduction to Neural Net
 
@@ -36,6 +38,7 @@ I had to code feed forward, back propagation process on my own, basic principle 
   
 ② Mathmatical process using chain rules
 
+
 #### 3) Training Neural Network : method to prevent overfitting
 
 ① Early stop algorithm
@@ -51,6 +54,7 @@ I had to code feed forward, back propagation process on my own, basic principle 
 ⑥ Stochastic gradient descent
 
 ⑦ Learning rate
+
 
 
 ## 3. Details
@@ -82,6 +86,7 @@ rides.head()
 
 <img src="./images/input_data_1.png" width="800">
 
+
 ② Checking out the data
 
 I checked and plotted for 10 days data
@@ -91,6 +96,7 @@ rides[:24*10].plot(x='dteday', y='cnt')
 ```
 
 <img src="./images/input_data_2.png" width="400">
+
 
 ③ Dummify variables
 
@@ -117,6 +123,7 @@ data.head()
 
 <img src="./images/dummify_variables.png" width="800">
 
+
 ④ Scaling target variables
 
 For example, number of rental for an hour can be 0 or even 10,000
@@ -137,6 +144,7 @@ for each in quant_features:
 ```
 
 <img src="./images/scaling_target_variables.png" width="800">
+
 
 ⑤ Splitting data into training, validation, testing sets
 
@@ -165,6 +173,7 @@ val_features, val_targets = features[-60*24:], targets[-60*24:]
 I will train this data to my NeuralNet architecture and simultaneously check loss for train & validation data
 
 After complete tuning all parameters, I will check arruracy for test data only once
+
 
 ① Train data
 
@@ -198,6 +207,7 @@ for ii in range(iterations):
     losses['validation'].append(val_loss)   
 ```
 
+
 ② Explanation for NeuralNetwork initiation
 
 ```python
@@ -218,6 +228,7 @@ class NeuralNetwork(object):
         
         self.activation_function = lambda x : 1 / (1 + np.exp(-x))        
 ```
+
 
 ③ Explanation for NeuralNetwork.train method
 
@@ -268,6 +279,8 @@ class NeuralNetwork(object):
         return delta_weights_i_h, delta_weights_h_o
 ```
 
+
+
 ## 4. Results
 
 | Trial |   Learning Rate   |   Hidden Nodes   |   Iteration   |              Explanation                  |
@@ -293,6 +306,7 @@ class NeuralNetwork(object):
 
 ## 5. Discussion
 
+
 #### 1) Meaning
 
 I already used Keras and TensorFlow library at Self Driving Car Nanodegree program
@@ -306,6 +320,7 @@ At that time, I thought I understood everything of Neural Net
 But this time was very good chance for me to studying Neural Net
 
 especially the mathmatical principle of Forward propagation, Backpropagation
+
 
 #### 2) About architecture
 
