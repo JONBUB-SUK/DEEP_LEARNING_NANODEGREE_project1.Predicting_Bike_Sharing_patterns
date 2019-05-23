@@ -2,15 +2,19 @@
 
 # 1. Abstract
 
-### 1) Purpose
-
 The purpose of this project is to predict number of bike rental for days, hours
 
-### 2) Input data
+I have to make NeuralNet architecture trained by rental shop sales data
 
-Input data is csv file that includes number of bike sharing for days, hours, weekdays, weather etc
+So I decided architecture, loss function and tuned hyperparameters like learning rate, epochs, hidden nodes
 
-For feeding this data to Neuaral Net and tunning weights, we need to some data tunnings
+Finally I can find adequate architecture for this situation
+
+The special thing of this project is I should not use Machine Learning framework like TensorFlow, Keras..
+
+To make NeuralNet without Machine Learning framework, I need to study the principle of Deep Learning more precisely
+
+I had to code feed forward, back propagation process on my own, basic principle but quite a confusing process
 
 
 # 2. Background Learning
