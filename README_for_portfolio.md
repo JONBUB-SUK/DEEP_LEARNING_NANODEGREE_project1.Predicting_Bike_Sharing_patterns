@@ -52,7 +52,7 @@ We have to decide the architecture of NeuralNet, size, loss function, ...
 I had to spend much time to tuning hyperparameters like learning rate, number of epochs, size of hidden nodes
 
 
-- Preparing Data
+### 1) Preparing Data
 
 ① Loading and preparing data
 
@@ -145,7 +145,7 @@ val_features, val_targets = features[-60*24:], targets[-60*24:]
 <img src="./images/test_targets.png" width="200">
 
 
-- Training , valiation, test
+### 2) Training , valiation, test
 
 I did not included source code, please check .py files
 
