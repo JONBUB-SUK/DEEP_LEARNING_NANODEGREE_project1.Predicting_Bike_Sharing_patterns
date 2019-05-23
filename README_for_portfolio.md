@@ -18,13 +18,14 @@
 # 2. Background Learning
 
 
-##### ① Introduction to Neural Net
+- Introduction to Neural Net
+  ① asdaklsfolqnas
+  ② asdkljqf
+
+- Gradient Descent
 
 
-##### ②. Gradient Descent
-
-
-##### ③. Training Neural Network
+- Training Neural Network
 
 
 # 3. Code Flow
