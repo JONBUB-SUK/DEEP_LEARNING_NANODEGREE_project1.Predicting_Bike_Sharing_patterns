@@ -1,4 +1,5 @@
-# DEEP LEARNING NANODEGREE project1.Predicting Bike Sharing patterns
+# DEEP LEARNING NANODEGREE
+# project1.Predicting Bike Sharing patterns
 
 # 1. Abstraction
 
