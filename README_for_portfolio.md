@@ -6,17 +6,14 @@
 
 The purpose of this project is to predict number of bike rental for days, hours
 
-
 ### 2) Input data
 
 Input data is csv file that includes number of bike sharing for days, hours, weekdays, weather etc
-
 
 For feeding this data to Neuaral Net and tunning weights, we need to some data tunnings
 
 
 # 2. Background Learning
-
 
 ### 1) Introduction to Neural Net
 
@@ -147,12 +144,11 @@ val_features, val_targets = features[-60*24:], targets[-60*24:]
 
 ### 2) Training , valiation, test
 
-I did not included source code, please check .py files
+I will train this data to my NeuralNet architecture and simultaneously check loss for train & validation data
 
-Below is flow of parameter tunnings
+After complete tuning all parameters, I will check arruracy for test data only once
 
-
-① Training data
+① Train data
 
 ```python
 
@@ -295,7 +291,7 @@ class NeuralNetwork(object):
 
 # 5. Conclusion & Discussion
 
-① Meaning
+### 1) Meaning
 
 I already used Keras and TensorFlow library at Self Driving Car Nanodegree program
 
@@ -309,7 +305,7 @@ But this time was very good chance for me to studying Neural Net
 
 especially the mathmatical principle of Forward propagation, Backpropagation
 
-② About architecture
+### 2) About architecture
 
 This project confined architectures to just 1 hidden layer Neural Net
 
