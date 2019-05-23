@@ -53,7 +53,7 @@ I had to code feed forward, back propagation process on my own, basic principle 
 ⑦ Learning rate
 
 
-## 3. Code Flow
+## 3. Details
 
 Firstly, we need to preprocess data
 
