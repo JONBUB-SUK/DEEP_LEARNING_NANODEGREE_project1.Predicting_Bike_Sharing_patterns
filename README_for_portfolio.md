@@ -19,23 +19,36 @@ I had to code feed forward, back propagation process on my own, basic principle 
 
 # 2. Related Study
 
-### 2.1 Introduction to Neural Net
+### 1) Introduction to Neural Net
 
-##### 2.1.1  asdaklsfolqnas
+① Draw lines classifying characters
+
+② Concept of Loss fucntion, Activation function
+
+② Extention of dimension : draw curved line classifying characters
+
+
+### 2) Gradient Descent
+
+① Forward & Backward propagation
   
-##### 2.1.2 asdkljqf
+② Mathmatical process using chain rules
 
-### 2.2 Gradient Descent
+### 3) Training Neural Network : method to prevent overfitting
 
-① asdaklsfolqnas
+① Early stop algorithm
   
-② asdkljqf
+② L1 & L2 regulations
 
-### 2.3 Training Neural Network
+③ Drop out
 
-① asdaklsfolqnas
-  
-② asdkljqf
+④ Escaping local minima
+
+⑤ Overcome vanishing gradient problem
+
+⑥ Stochastic gradient descent
+
+⑦ Learning rate
 
 
 # 3. Code Flow
@@ -270,7 +283,7 @@ class NeuralNetwork(object):
         return delta_weights_i_h, delta_weights_h_o
 ```
 
-# 4. Result
+# 4. Results
 
 | Trial |   Learning Rate   |   Hidden Nodes   |   Iteration   |              Explanation                  |
 | ----- | -------           | -------          |  -------      |                 ------                    |
@@ -293,7 +306,7 @@ class NeuralNetwork(object):
 
 
 
-# 5. Conclusion & Discussion
+# 5. Discussion
 
 ### 1) Meaning
 
