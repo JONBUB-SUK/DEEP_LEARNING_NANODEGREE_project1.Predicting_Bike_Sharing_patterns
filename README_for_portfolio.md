@@ -1,7 +1,8 @@
 # DEEP LEARNING NANODEGREE
-project1.Predicting Bike Sharing patterns
+# project1.Predicting Bike Sharing patterns
 
-# 1. Abstraction
+
+## 1. Abstraction
 
 The purpose of this project is to predict number of bike rental for days, hours
 
@@ -18,7 +19,7 @@ To make NeuralNet without Machine Learning framework, I need to study the princi
 I had to code feed forward, back propagation process on my own, basic principle but quite a confusing process
 
 
-# 2. Related Study
+## 2. Related Study
 
 ### 1) Introduction to Neural Net
 
