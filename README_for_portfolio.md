@@ -19,13 +19,22 @@
 
 
 - Introduction to Neural Net
+
   ① asdaklsfolqnas
+  
   ② asdkljqf
 
 - Gradient Descent
 
+  ① asdaklsfolqnas
+  
+  ② asdkljqf
 
 - Training Neural Network
+
+  ① asdaklsfolqnas
+  
+  ② asdkljqf
 
 
 # 3. Code Flow
