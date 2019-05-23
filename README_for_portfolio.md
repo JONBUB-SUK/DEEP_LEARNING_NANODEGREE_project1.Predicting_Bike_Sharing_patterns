@@ -21,10 +21,10 @@
 ##### ① Introduction to Neural Net
 
 
-##### 2. Gradient Descent
+##### ②. Gradient Descent
 
 
-##### 3. Training Neural Network
+##### ③. Training Neural Network
 
 
 # 3. Code Flow
@@ -42,9 +42,9 @@ We have to decide the architecture of NeuralNet, size, loss function, ...
 I had to spend much time to tuning hyperparameters like learning rate, number of epochs, size of hidden nodes
 
 
-### 1. Preparing Data
+###### ① Preparing Data
 
-##### 1. Loading and preparing data
+- Loading and preparing data
 
 ```python
 data_path = 'Bike-Sharing-Dataset/hour.csv'
@@ -56,7 +56,7 @@ rides.head()
 
 <img src="./images/input_data_1.png" width="800">
 
-##### 2. Checking out the data
+- Checking out the data
 
 I checked and plotted for 10 days data
 
@@ -66,7 +66,7 @@ rides[:24*10].plot(x='dteday', y='cnt')
 
 <img src="./images/input_data_2.png" width="400">
 
-##### 3. Dummify variables
+- Dummify variables
 
 For example, month has 12 values (1~12)
 
@@ -91,7 +91,7 @@ data.head()
 
 <img src="./images/dummify_variables.png" width="800">
 
-##### 4. Scaling target variables
+- Scaling target variables
 
 For example, number of rental for an hour can be 0 or even 10,000
 
@@ -113,7 +113,7 @@ for each in quant_features:
 
 <img src="./images/scaling_target_variables.png" width="800">
 
-##### 5. Splitting data into training, validation, testing sets
+- Splitting data into training, validation, testing sets
 
 ```python
 test_data = data[-21*24:]
