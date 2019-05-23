@@ -1,6 +1,6 @@
 # DEEP LEARNING NANODEGREE project1.Predicting Bike Sharing patterns
 
-# 1. Introduction
+# 1. Abstraction
 
 The purpose of this project is to predict number of bike rental for days, hours
 
