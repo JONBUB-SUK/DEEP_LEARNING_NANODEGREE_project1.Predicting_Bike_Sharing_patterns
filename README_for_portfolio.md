@@ -2,39 +2,39 @@
 
 # 1. Abstract
 
-- Purpose
+### 1) Purpose
 
-  The purpose of this project is to predict number of bike rental for days, hours
-
-
-- Input data
-
-  Input data is csv file that includes number of bike sharing for days, hours, weekdays, weather etc
+The purpose of this project is to predict number of bike rental for days, hours
 
 
-  For feeding this data to Neuaral Net and tunning weights, we need to some data tunnings
+### 2) Input data
+
+Input data is csv file that includes number of bike sharing for days, hours, weekdays, weather etc
+
+
+For feeding this data to Neuaral Net and tunning weights, we need to some data tunnings
 
 
 # 2. Background Learning
 
 
-- Introduction to Neural Net
+### 1) Introduction to Neural Net
 
-  ① asdaklsfolqnas
+① asdaklsfolqnas
   
-  ② asdkljqf
+② asdkljqf
 
-- Gradient Descent
+### 2) Gradient Descent
 
-  ① asdaklsfolqnas
+① asdaklsfolqnas
   
-  ② asdkljqf
+② asdkljqf
 
-- Training Neural Network
+### 3) Training Neural Network
 
-  ① asdaklsfolqnas
+① asdaklsfolqnas
   
-  ② asdkljqf
+② asdkljqf
 
 
 # 3. Code Flow
