@@ -21,7 +21,7 @@ I had to code feed forward, back propagation process on my own, basic principle 
 
 ## 2. Related Study
 
-### 1) Introduction to Neural Net
+#### 1) Introduction to Neural Net
 
 ① Draw lines classifying characters
 
@@ -30,13 +30,13 @@ I had to code feed forward, back propagation process on my own, basic principle 
 ② Extention of dimension : draw curved line classifying characters
 
 
-### 2) Gradient Descent
+#### 2) Gradient Descent
 
 ① Forward & Backward propagation
   
 ② Mathmatical process using chain rules
 
-### 3) Training Neural Network : method to prevent overfitting
+#### 3) Training Neural Network : method to prevent overfitting
 
 ① Early stop algorithm
   
@@ -68,7 +68,7 @@ We have to decide the architecture of NeuralNet, size, loss function, ...
 I had to spend much time to tuning hyperparameters like learning rate, number of epochs, size of hidden nodes
 
 
-### 1) Preparing Data
+#### 1) Preparing Data
 
 ① Loading and preparing data
 
@@ -160,7 +160,7 @@ val_features, val_targets = features[-60*24:], targets[-60*24:]
 <img src="./images/test_targets.png" width="200">
 
 
-### 2) Training , valiation, test
+#### 2) Training , valiation, test
 
 I will train this data to my NeuralNet architecture and simultaneously check loss for train & validation data
 
@@ -293,7 +293,7 @@ class NeuralNetwork(object):
 
 ## 5. Discussion
 
-### 1) Meaning
+#### 1) Meaning
 
 I already used Keras and TensorFlow library at Self Driving Car Nanodegree program
 
@@ -307,7 +307,7 @@ But this time was very good chance for me to studying Neural Net
 
 especially the mathmatical principle of Forward propagation, Backpropagation
 
-### 2) About architecture
+#### 2) About architecture
 
 This project confined architectures to just 1 hidden layer Neural Net
 
