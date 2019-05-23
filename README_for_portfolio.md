@@ -1,5 +1,5 @@
 # DEEP LEARNING NANODEGREE
-# project1.Predicting Bike Sharing patterns
+# Project1. Predicting Bike Sharing patterns
 
 
 ## 1. Abstraction
@@ -53,7 +53,7 @@ I had to code feed forward, back propagation process on my own, basic principle 
 ⑦ Learning rate
 
 
-# 3. Code Flow
+## 3. Code Flow
 
 Firstly, we need to preprocess data
 
@@ -268,7 +268,7 @@ class NeuralNetwork(object):
         return delta_weights_i_h, delta_weights_h_o
 ```
 
-# 4. Results
+## 4. Results
 
 | Trial |   Learning Rate   |   Hidden Nodes   |   Iteration   |              Explanation                  |
 | ----- | -------           | -------          |  -------      |                 ------                    |
@@ -291,7 +291,7 @@ class NeuralNetwork(object):
 
 
 
-# 5. Discussion
+## 5. Discussion
 
 ### 1) Meaning
 
