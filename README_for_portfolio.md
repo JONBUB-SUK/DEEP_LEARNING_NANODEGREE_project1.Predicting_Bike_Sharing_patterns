@@ -160,7 +160,7 @@ val_features, val_targets = features[-60*24:], targets[-60*24:]
 <img src="./images/test_targets.png" width="200">
 
 
-#### 2) Training , valiation, test
+#### 2) Train, Validate, Test
 
 I will train this data to my NeuralNet architecture and simultaneously check loss for train & validation data
 
