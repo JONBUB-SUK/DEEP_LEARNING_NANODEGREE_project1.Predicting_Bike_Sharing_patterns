@@ -102,7 +102,7 @@ rides[:24*10].plot(x='dteday', y='cnt')
 
 For example, month has 12 values (1~12)
 
-But December doesn't mean that it has much valuable than January
+But December doesn't mean that it is much valuable than January
 
 Because we put numbers to our Neural Net by x (input layer),
 we need to set all variables to equal value (0 or 1)
