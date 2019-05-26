@@ -6,7 +6,7 @@
 
 The purpose of this project is to predict number of bike rental for days, hours
 
-I have to make NeuralNet architecture trained by rental shop sales data
+I made NeuralNet architecture trained by rental shop sales data
 
 So I decided architecture, loss function and tuned hyperparameters like learning rate, epochs, hidden nodes
 
