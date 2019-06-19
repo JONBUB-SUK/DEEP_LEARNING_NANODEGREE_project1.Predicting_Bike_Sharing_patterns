@@ -280,15 +280,7 @@ class NeuralNetwork(object):
 ```
 ```python
     def update_weights(self, delta_weights_i_h, delta_weights_h_o, n_records):
-        ''' Update weights on gradient descent step
-         
-            Arguments
-            ---------
-            delta_weights_i_h: change in weights from input to hidden layers
-            delta_weights_h_o: change in weights from hidden to output layers
-            n_records: number of records
 
-        '''
         # update hidden-to-output weights with gradient descent step
         ### changed after first feedback (190523) ###
         ### self.weights_hidden_to_output += delta_weights_h_o / n_records 
