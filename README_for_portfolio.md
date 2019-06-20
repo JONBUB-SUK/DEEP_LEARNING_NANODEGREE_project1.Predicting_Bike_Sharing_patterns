@@ -8,9 +8,9 @@ The purpose of this project is to predict number of bike rental for days, hours
 
 I made NeuralNet architecture trained by rental shop sales data
 
-So I decided architecture, loss function and tuned hyperparameters like learning rate, epochs, hidden nodes
+Then I decided architecture, loss function and tuned hyperparameters like learning rate, epochs, hidden nodes
 
-Finally I can find adequate architecture for this situation
+Finally I found adequate architecture for this situation
 
 The special thing of this project is I should not use Machine Learning framework like TensorFlow, Keras..
 
@@ -59,15 +59,15 @@ I had to code feed forward, back propagation process on my own, basic principle 
 
 ## 3. Details
 
-Firstly, we need to preprocess data
+Firstly, I need to preprocess data
 
-We don't have to use all of data we have
+I don't have to use all of data I have
 
-So we have to check what important variables is, and devide into three parts (train, validation, test)
+So I have to check what important variables is, and devide into three parts (train, validation, test)
 
-Secondly, we will use preprocessed data to predict result
+Secondly, I will use preprocessed data to predict result
 
-We have to decide the architecture of NeuralNet, size, loss function, ...
+I have to decide the architecture of NeuralNet, size, loss function, ...
 
 I had to spend much time to tuning hyperparameters like learning rate, number of epochs, size of hidden nodes
 
@@ -104,8 +104,8 @@ For example, month has 12 values (1~12)
 
 But December doesn't mean that it is much valuable than January
 
-Because we put numbers to our Neural Net by x (input layer),
-we need to set all variables to equal value (0 or 1)
+Because I put numbers to my Neural Net by x (input layer),
+I need to set all variables to equal value (0 or 1)
 
 And that variables are season, weather, month, hour, weekday
 
@@ -130,7 +130,7 @@ For example, number of rental for an hour can be 0 or even 10,000
 
 It can have too much difference and it can make distortion for Neuaral Net calculation
 
-So we have to scaling to equal range that have 0 mean and 1 standard deviation
+So I have to scaling to equal range that have 0 mean and 1 standard deviation
 
 That variables are total rental number, registered number, casueal number, temperature, humidity, windspeed
 
@@ -325,7 +325,7 @@ I already used Keras and TensorFlow library at Self Driving Car Nanodegree progr
 
 Especially at Keras, it was possible to implement not only simple Neural Net but also complex and famous architectures
 
-even if I don't understand principle of Neural Net
+although I don't understand principle of Neural Net
 
 At that time, I thought I understood everything of Neural Net
 
